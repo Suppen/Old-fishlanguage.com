@@ -1,0 +1,29 @@
+<template name="fishCodemaker">
+	<div class="fish-codemaker">
+		<div class="code-input">
+			<h2>Write your {{fish}}-code here</h2>
+			<textarea>{{code}}</textarea>
+			<p>{{description}}</p>
+			<button type="button" data-rel="submit">Submit</button>
+			{{#if currentUser}}
+				<button type="button" data-rel="save">Save</button>
+			{{/if}}
+		</div>
+		<div class="code-select">
+			<h3>Or pick one from below</h3>
+			<input type="text" name="filter" placeholder="Filter"/>
+			<ul>
+				{{#each codes}}
+					{{> fishCodeSnippet}}
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</template>
+
+<template name="fishCodeSnippet">
+	<li class="fish-code-snippet">
+		<strong title="{{description}}">{{title}}</strong> - 
+		<a href="{{pathFor 'profile' _id=authorId}}">{{author}}</a>
+	</li>
+</template>

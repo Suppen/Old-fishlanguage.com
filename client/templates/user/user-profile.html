@@ -1,0 +1,25 @@
+<template name="userProfile">
+	<div id="user-profile">
+		<h2>Profile of {{username}}</h2>
+		<dl>
+			<!--dt>Homepage</dt>
+			<dd>{{maybeUnset homepage}}</dd-->
+			<dt>User created</dt>
+			<dd>{{createdAt}}</dd>
+		</dl>
+		<h3>Submitted code</h3>
+		{{#if hasSubmittedCode}}
+			<ul id="user-code">
+			{{#each code}}
+				<li class="{{visibility}}"><b title="{{description}}">{{title}}</b>
+				{{#if ownProfile}}
+					<img src="/img/delete.png" alt="delete" class="icon delete" />
+				{{/if}}
+				</li>
+			{{/each}}
+			</ul>
+		{{else}}
+			<p>This user hasn't submitted any code</p>
+		{{/if}}
+	</div>
+</template>

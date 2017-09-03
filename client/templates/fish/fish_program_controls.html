@@ -1,0 +1,60 @@
+<template name="fishProgramControls">
+	<div class="controls">
+		<div class="control-element init">
+			<div>Start the program</div>
+			<div>
+				<button type="button" name="start-control">Start</button>
+				<button type="button" name="start-no-anim-control">Run without animation</button>
+			</div>
+		</div>
+		<div class="control-element init">
+			<div>Initial stack</div>
+			<div>
+				<input type="text" name="initial-stack-control" placeholder="Examples: 5, &quot;k&quot;, &quot;cake&quot;, 0xf3, 037, 2.64" />
+			</div>
+		</div>
+		<div class="control-element {{errorClass}}">
+			<div>Error</div>
+			<div>{{error}}</div>
+		</div>
+		<div class="control-element">
+			<div>Output</div>
+			<div>
+				<pre class="{{stdoutClass}}">{{stdoutData}}</pre>
+			</div>
+		</div>
+		<div class="control-element anim-only">
+			<div>Execution speed</div>
+			<div>
+				<input type="range" min="1" max="300" value="{{speed}}" name="speed-control" />
+				<span title="Actual speed may vary">{{currentSpeed}} Ticks per second</span>
+			</div>
+		</div>
+		<div class="control-element anim-only">
+			<div>Give input to the program</div>
+			<div>
+				<textarea name="stdin" placeholder="Give characters to the program"></textarea>
+				<button type="button" name="submit-input">Give</button>
+			</div>
+		</div>
+		<div class="control-element anim-only">
+			<div>Input stack</div>
+			<div class="{{stdinClass}}">
+				{{stdinData}}
+			</div>
+		</div>
+		<div class="control-element anim-only">
+			<div>Stack</div>
+			<div class="{{stackClass}}">
+				{{stackData}}
+			</div>
+		</div>
+		<div class="control-element {{startedClass}}">
+			<div>Stop</div>
+			<div class="{{stackClass}}">
+				<button type="button" name="pause">{{pauseResume}}</button>
+				<button type="button" name="stop">Stop</button>
+			</div>
+		</div>
+	</div>
+</template>

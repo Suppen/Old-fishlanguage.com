@@ -1,0 +1,40 @@
+<template name="fishSave">
+	<div id="fish-save">
+		<h2>Save your program</h2>
+		<form>
+			<div class="form-element">
+				<label for="fish-save-title">Title of program</label>
+				<input type="text" id="fish-save-title" />
+			</div>
+			<div class="form-element">
+				<label for="fish-save-description">Description of program</label>
+				<textarea id="fish-save-description"></textarea>
+			</div>
+			<div class="form-element">
+				<label>Visibility</label>
+				<label title="Visible for everyone. Will show up in lists">
+					<input type="radio" name="visibility" value="public" checked="checked">
+					Public
+				</label>
+				<label title="Visible only for those who have the link to it">
+					<input type="radio" name="visibility" value="link">
+					Link only
+				</label>
+				<label title="Visible for you only">
+					<input type="radio" name="visibility" value="private">
+					Private
+				</label>
+			</div>
+			<div class="form-element">
+				<input type="submit" value="Save" />
+			</div>
+			<div class="form-element">
+				<label>Program</label>
+				{{> fishProgramTable program}}
+			</div>
+			<div class="form-element">
+				<input type="submit" value="Save" />
+			</div>
+		</form>
+	</div>
+</template>

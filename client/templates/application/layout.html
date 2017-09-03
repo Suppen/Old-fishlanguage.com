@@ -1,0 +1,30 @@
+<head>
+	<title>&gt;&lt;&gt; - Fish</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="Online Fish interpreter" />
+	<script src="/Fish.js"></script>
+	<script src="https://js.suppen.no/SoupEvents.js"></script>
+</head>
+
+<template name="layout">
+	<div class="layout">
+		{{> meteorErrors}}
+		<h1>The online {{fish}} interpreter</h1>
+		<p class="tiny">The site is work in progress</p>
+		{{#if currentUser}}
+			<p>Logged in as <a href="{{pathFor 'profile' _id=currentUser._id}}">{{currentUser.username}}</a> - <a data-rel="logout">Log out</a></p>
+		{{else}}
+			{{> loginButtons}}
+		{{/if}}
+		<div class="content">
+			{{> yield}}
+		</div>
+		<div id="footer">
+			<p>Made by <a href="http://suppen.no/">Suppen</a></p>
+			{{> donation}}
+		</div>
+	</div>
+	<div class="hidden">
+		<p>Online Fish interpreter</p>
+	</div>
+</template>

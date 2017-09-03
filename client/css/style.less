@@ -1,0 +1,148 @@
+.fish-program-table {
+	border-collapse: collapse;
+	td {
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		border: solid #f0f0f0 1px;
+	}
+
+	td.instruction-pointer {
+		background-color: red;
+	}
+}
+
+.grayed-out {
+	color: #aaaaaa;
+}
+
+.controls {
+	margin-top: 2em;
+
+	.control-element {
+		border: solid #aaaaaa 1px;
+		border-radius: 10px;
+		margin-top: 10px;
+
+		> div {
+			display: inline-block;
+		}
+
+		div:nth-child(1) {
+			/* Descriptors */
+			width: 15%;
+			font-weight: bold;
+			text-align: center;
+			vertical-align: middle;
+		}
+		div:nth-child(2) {
+			/* Actual controls */
+			width: 80%;
+			margin-top: 5px;
+			padding: 15px;
+			vertical-align: middle;
+
+			input {
+				width: 80%;
+			}
+			pre {
+				display: block;
+			}
+			* {
+				display: inline-block;
+			}
+		}
+	}
+	.control-element.error {
+		background-color: #ffbbbb;
+
+		div:nth-child(2) {
+			font-size: 2em;
+			font-weight: bold;
+		}
+	}
+}
+
+body {
+	background-color: #f0f0f0;
+}
+
+.layout {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	padding: 2em;
+	max-width: 60%;
+	background-color: white;
+	border: solid #dddddd 1px;
+	border-radius: 1em;
+
+	> h1 {
+		text-align: center;
+	}
+	> p.tiny {
+		font-size: 0.5em;
+		text-align: center;
+		margin-top: 0;
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+.fish-codemaker {
+	textarea {
+		display: block;
+		margin: auto;
+		width: 100%;
+		height: 20em;
+		font-family: monospace;
+	}
+}
+
+#footer {
+	text-align: center;
+	font-size: 0.8em;
+
+}
+
+img.icon {
+	height: 1em;
+}
+
+.form-element {
+	margin: 1em 0;
+	input[type=text], textarea {
+		width: 50%;
+	}
+	input[type=submit] {
+		width: auto;
+		padding: 5px 10px;
+	}
+}
+
+ul#user-code {
+	li {
+		list-style-type: none;
+		padding-right: 0.5em;
+	}
+
+	li:before {
+		content: "\2022 ";
+		font-size: 2em;
+		vertical-align: middle;
+	}
+
+	li.public:before {
+		color: green;
+	}
+
+	li.link:before {
+		color: #CCCC00;
+	}
+
+	li.private:before {
+		color: red;
+	}
+}

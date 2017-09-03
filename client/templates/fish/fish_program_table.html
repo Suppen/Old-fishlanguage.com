@@ -1,0 +1,19 @@
+<template name="fishProgramTable">
+	<table class="fish-program-table">
+		{{#each lines}}
+			{{> fishProgramTableLine}}
+		{{/each}}
+	</table>
+</template>
+
+<template name="fishProgramTableLine">
+	<tr>
+		{{#each characters}}
+			{{> fishProgramTableCharacter}}
+		{{/each}}
+	</tr>
+</template>
+
+<template name="fishProgramTableCharacter">
+	<td></td>
+</template>

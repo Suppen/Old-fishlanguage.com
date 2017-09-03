@@ -1,0 +1,9 @@
+<template name="playground">
+	<div class="playground">
+		{{#if codeSubmitted}}
+			{{> fishProgram code}}
+		{{else}}
+			{{> fishCodemaker}}
+		{{/if}}
+	</div>
+</template>
